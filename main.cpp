@@ -54,31 +54,31 @@ int main() {
 
     leggereV(v, dim);
     stampaV(v, dim);
-    cout << endl;
-    stampaInversoV(v, dim);
-    cout << endl;
-
-    int p = controlloValoreV(v, dim);
-    if (p != -1) {
-        cout << "Il valore cercato esiste e si trova in posizione: " << p << endl;
-        cout << "|----------------------------|" << endl;
-    } else {
-        cout << "Il valore inserito non esiste nel vettore" << endl;
-        cout << "|----------------------------|" << endl;
-    }
-    cout << endl;
-
-    calcoloSommatoriaDP(vp, vd, v, dim);
-    cout << endl;
-
-    calcoloValMinMaxMedia(v, dim);
-    cout << endl;
-
-    controlloElementiNulli(v, dim);
-    cout << endl;
-
-    copiaVEliminaElem(v, v_copia, dim);
-    cout << endl;
+    // cout << endl;
+    // stampaInversoV(v, dim);
+    // cout << endl;
+    //
+    // int p = controlloValoreV(v, dim);
+    // if (p != -1) {
+    //     cout << "Il valore cercato esiste e si trova in posizione: " << p << endl;
+    //     cout << "|----------------------------|" << endl;
+    // } else {
+    //     cout << "Il valore inserito non esiste nel vettore" << endl;
+    //     cout << "|----------------------------|" << endl;
+    // }
+    // cout << endl;
+    //
+    // calcoloSommatoriaDP(vp, vd, v, dim);
+    // cout << endl;
+    //
+    // calcoloValMinMaxMedia(v, dim);
+    // cout << endl;
+    //
+    // controlloElementiNulli(v, dim);
+    // cout << endl;
+    //
+    // copiaVEliminaElem(v, v_copia, dim);
+    // cout << endl;
 
     EliminaElemV(v , &dim);
     cout << endl;
@@ -260,7 +260,7 @@ void EliminaElemV(int *v, int *dim) {
     int pos = 0;
 
     cout << "|----------------------------|" << endl;
-    cout << "Inserisci la posizione di un elemento da eliminare: " << endl;
+    cout << "Inserisci la posizione di un elemento da eliminare (0 - " << *dim << "): " << endl;
     cin >> pos;
 
     cout << endl;
@@ -297,24 +297,33 @@ void aggiungiElemV(int *v, int *dim) {
     int n = 0;
 
     cout << "|----------------------------|" << endl;
-    cout << "Inserisci la posizione di un elemento da aggiungere (0 <= pos <= " << *dim << "): " << endl;
+    cout << "Inserisci la posizione di un elemento da aggiungere (0 - " << *dim << "): " << endl;
     cin >> pos;
-    if (pos < 0 || pos > *dim) {
-        cout << "Posizione non valida." << endl;
-        return;
-    }
-
     cout << "Inserisci il valore dell'elemento da aggiungere: " << endl;
     cin >> n;
 
-    for (int i = *dim; i > pos; i--) {
-        v[i] = v[i - 1];
+    cout << endl;
+
+    cout << "v prima dell'aggiunta: " << endl;
+    for (int i = 0; i < *dim; i++) {
+        cout << *(v + i) << " ";
+    }
+    cout << endl;
+
+    int mediano = (*dim - 1) / 2;
+
+    if (pos <= mediano) {
+        for (int i = *dim; i > pos; i--) {
+            v[i] = v[i - 1];
+        }
+    } else {
+        for (int i = *dim; i > pos; i--) {
+            v[i] = v[i - 1];
+        }
     }
 
     v[pos] = n;
-
     (*dim)++;
-
 
     cout << "v dopo l'aggiunta:" << endl;
     for (int i = 0; i < *dim; i++) {
@@ -323,4 +332,7 @@ void aggiungiElemV(int *v, int *dim) {
     cout << endl;
     cout << "|----------------------------|" << endl;
 }
+
+
+
 
