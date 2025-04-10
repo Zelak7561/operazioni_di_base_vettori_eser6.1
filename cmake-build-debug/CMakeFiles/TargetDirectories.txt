@@ -1,0 +1,3 @@
+C:/Users/mario/CLionProjects/operazioni_di_base_vettori_eser6.1/cmake-build-debug/CMakeFiles/operazioni_di_base_vettori_eser6_1.dir
+C:/Users/mario/CLionProjects/operazioni_di_base_vettori_eser6.1/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/mario/CLionProjects/operazioni_di_base_vettori_eser6.1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
